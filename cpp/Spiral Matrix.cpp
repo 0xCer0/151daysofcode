@@ -14,30 +14,54 @@
 // is 6.
 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
 class Solution{
 
 	public:
 	int findK(vector<vector<int>> &a, int n, int m, int k)
     {
-        int r=0,c=0,i=0;
-        while(k>=1){
-            for(i=r;i<=m-1;++i,--k)
-                if(k==1)
-                return a[r][i];
-                ++r;
-                for(i=r;i<=n-1 && k>=1;++i,--k)
-                    if(k ==1)
-                    return a[i][m-1];
-                    --m;
-                    for(i=m-1;1>=c && k>=1;--i,--k)
-                    if (k==1)
-                    return a[n-1][i];
-                    --n;
-                    for(i=n-1;i>=r && k>=1;--i,--k)
-                    if (k==1)
-                    return a[i][c];
-                    ++c;
-        }
+        // Your code goes here
+vector<int>v;
+int top = 0;
+int bottom = n - 1;
+int right = m - 1;
+int left = 0;
+int side = 0;
+int constexpr total_sides = 4;
+while(top <= bottom && left <= right){
+if(side == 0){
+for(int i = left;i<=right;++i){
+v.push_back(a[top][i]);
+}
+top++;
+}
+if(side == 1){
+for(int i = top;i<=bottom;++i){
+v.push_back(a[i][right]);
+}
+right--;
+}
+if(side == 2){
+for(int i = right;i>=left;--i){
+v.push_back(a[bottom][i]);
+}
+bottom--;
+}
+if(side == 3){
+for(int i = bottom;i>=top;--i){
+v.push_back(a[i][left]);
+}
+left++;
+}
+side = (side + 1) % total_sides;
+}
+return v[k-1];
     }
 
 };
+
