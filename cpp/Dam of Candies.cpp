@@ -20,7 +20,20 @@ class Solution{
     public:
     int maxCandy(int height[], int n) 
     { 
-        // Your code goes here
+        
+        int i=0;
+        int j=n-1,ans=0;
+        while(i<j)
+        {
+            int area=0,wid=j-i-1,ht=0;
+            ht=min(height[i],height[j]);
+            area=wid*ht;
+            ans=max(ans,area);
+            if(height[i]<height[j])
+            i++;
+            else j--;
+        }
+        return ans;
     }   
 };
 
