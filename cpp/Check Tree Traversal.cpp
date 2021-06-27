@@ -22,12 +22,6 @@
 
 #include <bits/stdc++.h> 
 using namespace std; 
-bool checktree(int preorder[], int inorder[], int postorder[], int len) ;
-
-
- // } Driver Code Ends
-
-
 
 bool checktree(int preorder[], int inorder[], int postorder[], int len) 
 {
