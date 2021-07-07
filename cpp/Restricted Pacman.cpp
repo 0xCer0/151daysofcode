@@ -19,3 +19,49 @@
 // 1 and 3 are the only indices that cannot be 
 // visited. Therefore the candies at these two 
 // positions will be left on the board. 
+
+//Initial Template for C++
+
+#include <bits/stdc++.h> 
+#include <unordered_set>
+using namespace std; 
+
+class Solution{
+    public:
+    int candies(int m, int n) 
+    { 
+  
+    	vector<long> eaten;
+      int smallest, largest;
+    	if (m < n){
+        smallest = m;
+        largest = n;
+      } else {
+        smallest = n;
+        largest = m;
+      }
+    	int k = 1;
+    	while(k * smallest < largest){
+    	    eaten.push_back(smallest * k);
+          k++;
+    	}
+      eaten.push_back(largest);
+      long i = k-2, j = k-1;
+      bool cont = true;
+      while(cont){
+        if (eaten[i] + smallest <= eaten[j] + largest){
+          eaten.push_back(eaten[i] + smallest);
+          i += 1;
+        } else if (eaten.back() != eaten[j] + largest){
+          eaten.push_back(eaten[j] + largest);
+          j += 1;
+        } else if (eaten.back() == eaten[j] + largest){
+          j += 1;
+        }
+        if (i > (largest * largest)){
+          cont = false;
+        }
+
+    }
+};
+
