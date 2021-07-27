@@ -18,3 +18,4 @@ Explanation: Level order traversal of the tree
 is [8], [3, 10], [2, 6, 14], [4, 7, 12], [11, 13]. 
 The shortest range which satisfies the above 
 mentioned condition is [6, 11]. 
+
