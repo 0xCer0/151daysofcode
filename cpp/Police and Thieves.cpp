@@ -14,14 +14,45 @@
 // and second police man can catch either second 
 // or third thief.
 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
 class Solution{
     public:
     int catchThieves(char arr[], int n, int k) 
     {
-      
+        queue<int> police,thief;
+        for(int i=0;i<n;i++){
+            if(arr[i] == 'P') police.push(i);
+            else thief.push(i);
+        }
+        int ans = 0;
+        while(!police.empty() && !thief.empty()){
+            int x = police.front();
+            int t = thief.front();
+            if(abs(t-x) <= k){
+                police.pop();
+                thief.pop();
+                ans++;
+                continue;
+            }
+            if(t < x){
+                thief.pop();
+                continue;
+            }
+            if(t > x){
+                police.pop();
+                continue;
+            }
+        }
+        return ans;
     }
 };
 
+// { Driver Code Starts.
 
 int main() 
 { 
@@ -39,3 +70,5 @@ int main()
 	}
 	return 0; 
 } 
+
+  // } Driver Code Ends
