@@ -2,8 +2,7 @@
 // Given an array gallery[ ] consisting of n integers, where gallery[i] is the range of sprinkler at partition i (power==-1 indicates no sprinkler attached), return the minimum number of sprinklers that need to be turned on to water the complete gallery.
 // If there is no possible way to water the full length using the given sprinklers, print -1.
 
-// Example 1:
-
+// Example :
 // Input:
 // n = 6
 // gallery[ ] = {-1, 2, 2, -1, 0, 0}
