@@ -9,3 +9,8 @@
 // Explanation: substring "ab" is a prefix, 
 // a suffix and appears 3 times.
 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
