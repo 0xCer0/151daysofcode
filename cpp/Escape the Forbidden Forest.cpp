@@ -42,7 +42,14 @@ class Solution
         return dp[i][j] = ans;
     }
     
-
+    int build_bridges(string str1, string str2)
+    {
+        int dp[105][105];
+        memset(dp, -1, sizeof dp);
+        int n = str1.size();
+        int m = str2.size();
+        return build_bridges_util(0,0,str1,str2,n,m,dp);
+    }
 };
 
 int main()
