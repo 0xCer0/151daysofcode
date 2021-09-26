@@ -1,3 +1,10 @@
+// Given a large number (represented as a string) which has to divide by another number (represented as int data type). The large number can be very large which does not even fit in long long in C++. The task is to find the division of these numbers.
+// Examples: 
+ 
+// Input : number  = 1260257
+//         divisor = 37
+// Output : 34061
+
 #include<bits/stdc++.h>
 using namespace std;
 
