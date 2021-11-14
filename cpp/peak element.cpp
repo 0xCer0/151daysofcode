@@ -43,4 +43,5 @@ int peakElement(int arr[], int n){
             return m;
     }
     return i;
+    
 }
