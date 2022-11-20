@@ -2,47 +2,33 @@
 
 # class Solution:
 #     def twoOutOfThree(self, nums1: List[int], nums2: List[int], nums3: List[int]) -> List[int]:
+        
+#         final=[]
+#         for i in nums1:
+#             if i in nums2 or i in nums3:
+#                 final.append(i)
+#         for j in nums2:
+#             if j in nums3:
+#                 final.append(j)
+                
+#         return (set(final))
 
-# num1 = []        
-# for i in input(int()):
-#     num1.append(input(''))
+
+class Solution:
+    def twoOutOfThree(self, nums1: List[int], nums2: List[int], nums3: List[int]) -> List[int]:
+        a = list_to_set(nums1)
+        b = list_to_set(nums2)
+        c = list_to_set(nums3)        
+        return compare_two_sets(a, b) | compare_two_sets(a, c) | compare_two_sets(b, c)
+        
+                                    
+
+def list_to_set(nums_x: List[int]):
+    set_x = set()
+    for i in nums_x:
+        set_x.add(i)
+    return set_x    
     
-# print(num1)
 
-# def solution(num1,num2,num3):
-
-# list1 = []
-# list2 = []
-# list3 = []
-
-# n1=int(input())
-# for i in range(0,n1):
-#     ele = int(input())
-#     list1.append(ele)
-
-# print(list1)
-
-# n2 = int(input())
-# for i in range(0,n2):
-#     list2.append(int(input()))
-    
-# print(list2)
-
-list1 = []
-list2 = []
-list3 = []
-
-n1=int(input())
-for i in range(0,n1):
-    ele = int(input())
-    list1.append(ele)
-
-print(list1)
-
-n2 = int(input())
-for i in range(0,n2):
-    list2.append(int(input()))
-    
-print(list2)
-    
-    
+def compare_two_sets(s1, s2):
+    return set(s1.intersection(s2))
